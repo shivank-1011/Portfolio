@@ -81,3 +81,19 @@ themeToggle.addEventListener('click', () => {
         localStorage.setItem('theme', 'dark');
     }
 });
+
+//phone verification
+function validateForm() {
+    // Get the phone input
+    const phone = document.querySelector('input[name="phone"]').value;
+    
+    // Check if it's a valid Indian phone number (starting with 6, 7, 8, or 9 and exactly 10 digits)
+    const phonePattern = /^[6-9]\d{9}$/;
+    
+    if (!phonePattern.test(phone)) {
+      alert("Please enter a valid Indian phone number (10 digits starting with 6, 7, 8, or 9)");
+      return false;
+    }
+    
+    return true;
+  }
